@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<RBProject version="2008r4.1">
+<block type="Module" ID="827848083">
+ <ObjName>StringArrayOperations</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>0</IsClass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Method>
+  <ItemName>Filter</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Filter(s() as String, f as StringPredicate) As String()</SourceLine>
+   <SourceLine>dim t() as String</SourceLine>
+   <SourceLine>for i as Integer = 0 to UBound(s)</SourceLine>
+   <SourceLine>if f.Invoke(s(i)) then</SourceLine>
+   <SourceLine>t.Append s(i)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine>return t</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String, f as StringPredicate</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Map</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Map(s() as String, f as StringTransform) As String()</SourceLine>
+   <SourceLine>dim t() as String</SourceLine>
+   <SourceLine>for i as Integer = 0 to UBound(s)</SourceLine>
+   <SourceLine>t.Append f.Invoke(s(i))</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine>return t</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String, f as StringTransform</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Reverse</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Reverse(s() as String) As String()</SourceLine>
+   <SourceLine>dim U as Integer = UBound(s)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>dim t() as String</SourceLine>
+   <SourceLine>redim t(U)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i as Integer = 0 to U</SourceLine>
+   <SourceLine>t(U - i) = s(i)</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return t</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Left</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Left(s() as String, count as Integer) As String()</SourceLine>
+   <SourceLine>dim t() as String</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>dim lastIndex as Integer = CType(Min(count - 1, UBound(s)), Integer)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i as Integer = 0 to lastIndex</SourceLine>
+   <SourceLine>t.Append s(i)</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return t</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String, count as Integer</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Right</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Right(s() as String, count as Integer) As String()</SourceLine>
+   <SourceLine>dim t() as String</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>dim firstIndex as Integer = CType(Max(1 + UBound(s) - count, 0), Integer)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i as Integer = firstIndex to UBound(s)</SourceLine>
+   <SourceLine>t.Append s(i)</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return t</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String, count as Integer</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Mid</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Mid(s() as String, start as Integer, count as Integer) As String()</SourceLine>
+   <SourceLine>dim t() as String</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if start &lt; 0 then</SourceLine>
+   <SourceLine>start = 0</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>dim lastIndex as Integer = CType(Min(start + count - 1, UBound(s)), Integer)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i as Integer = start to lastIndex</SourceLine>
+   <SourceLine>t.Append s(i)</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return t</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String, start as Integer, count as Integer</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Mid</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Mid(s() as String, start as Integer) As String()</SourceLine>
+   <SourceLine>dim t() as String</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if start &lt; 0 then</SourceLine>
+   <SourceLine>start = 0</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i as Integer = start to UBound(s)</SourceLine>
+   <SourceLine>t.Append s(i)</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return t</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String, start as Integer</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Join</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Join(s() as String, t() as String) As String()</SourceLine>
+   <SourceLine>dim j() as String</SourceLine>
+   <SourceLine>for i as Integer = 0 to UBound(s)</SourceLine>
+   <SourceLine>j.Append s(i)</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine>for i as Integer = 0 to UBound(t)</SourceLine>
+   <SourceLine>j.Append t(i)</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine>return j</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s() as String, t() as String</ItemParams>
+  <ItemResult>String()</ItemResult>
+ </Method>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>2147483648</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
+</RBProject>

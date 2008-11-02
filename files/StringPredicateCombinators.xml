@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<RBProject version="2008r4.1">
+<block type="Module" ID="1457701182">
+ <ObjName>StringPredicateCombinators</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>0</IsClass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <DelegateDeclaration>
+  <ItemName>StringPredicate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Delegate Function StringPredicate(s as String) As Boolean</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s as String</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </DelegateDeclaration>
+ <Method>
+  <ItemName>BeginsWith</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function BeginsWith(s as String) As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateFactory.BeginsWith(s)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s as String</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>AllOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function AllOf(paramArray p() as StringPredicate) As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateCombinatorBinary.AllOf(p)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>paramArray p() as StringPredicate</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>AnyOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function AnyOf(paramArray p() as StringPredicate) As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateCombinatorBinary.AnyOf(p)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>paramArray p() as StringPredicate</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>NoneOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function NoneOf(paramArray p() as StringPredicate) As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateCombinatorBinary.NoneOf(p)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>paramArray p() as StringPredicate</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>IsWhitespace</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsWhitespace() As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateFactory.IsWhitespace</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams></ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>EndsWith</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function EndsWith(s as String) As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateFactory.EndsWith(s)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s as String</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Contains</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Contains(s as String) As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateFactory.Contains(s)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s as String</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>IsTrue</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsTrue() As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateFactory.IsTrue</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams></ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>IsFalse</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsFalse() As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateFactory.IsFalse</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams></ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Matches</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Matches(regularExpression as String) As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateRegEx.NewPredicate(regularExpression)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>regularExpression as String</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>IsEmpty</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsEmpty() As StringPredicate</SourceLine>
+   <SourceLine>return StringPredicateFactory.IsEmpty</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams></ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>2147483648</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
+</RBProject>

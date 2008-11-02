@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<RBProject version="2008r4.1">
+<block type="Module" ID="2016862367">
+ <ObjName>StringPredicateCombinatorBinary</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <IsClass>1</IsClass>
+ <ItemFlags>0</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Method>
+  <ItemName>EvaluateAllOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function EvaluateAllOf(s as String) As Boolean</SourceLine>
+   <SourceLine>dim allTrue as Boolean = false</SourceLine>
+   <SourceLine>for i as Integer = 0 to UBound(me.Arguments)</SourceLine>
+   <SourceLine>if me.Arguments(i).Invoke(s) then</SourceLine>
+   <SourceLine>allTrue = true</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>allTrue = false</SourceLine>
+   <SourceLine>exit</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return allTrue</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s as String</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>AllOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine> Shared Function AllOf(p() as StringPredicate) As StringPredicate</SourceLine>
+   <SourceLine>dim foo as new StringPredicateCombinatorBinary</SourceLine>
+   <SourceLine>foo.Arguments = p</SourceLine>
+   <SourceLine>return AddressOf foo.EvaluateAllOf</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>1</Shared>
+  <ItemParams>p() as StringPredicate</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>EvaluateAnyOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function EvaluateAnyOf(s as String) As Boolean</SourceLine>
+   <SourceLine>dim someTrue as Boolean = false</SourceLine>
+   <SourceLine>for i as Integer = 0 to UBound(me.Arguments)</SourceLine>
+   <SourceLine>if me.Arguments(i).Invoke(s) then</SourceLine>
+   <SourceLine>someTrue = true</SourceLine>
+   <SourceLine>exit</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>someTrue = false</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return someTrue</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s as String</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>AnyOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine> Shared Function AnyOf(p() as StringPredicate) As StringPredicate</SourceLine>
+   <SourceLine>dim foo as new StringPredicateCombinatorBinary</SourceLine>
+   <SourceLine>foo.Arguments = p</SourceLine>
+   <SourceLine>return AddressOf foo.EvaluateAnyOf</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>1</Shared>
+  <ItemParams>p() as StringPredicate</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>EvaluateNoneOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function EvaluateNoneOf(s as String) As Boolean</SourceLine>
+   <SourceLine>return not me.EvaluateAnyOf(s)</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <Shared>0</Shared>
+  <ItemParams>s as String</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>NoneOf</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine> Shared Function NoneOf(p() as StringPredicate) As StringPredicate</SourceLine>
+   <SourceLine>dim foo as new StringPredicateCombinatorBinary</SourceLine>
+   <SourceLine>foo.Arguments = p</SourceLine>
+   <SourceLine>return AddressOf foo.EvaluateNoneOf</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <Shared>1</Shared>
+  <ItemParams>p() as StringPredicate</ItemParams>
+  <ItemResult>StringPredicate</ItemResult>
+ </Method>
+ <Property>
+  <ItemName>Arguments()</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Arguments() As StringPredicate</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Arguments() As StringPredicate</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <Shared>0</Shared>
+ </Property>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>2147483648</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <InheritsFrom>Object</InheritsFrom>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
+</RBProject>
